@@ -1,0 +1,17 @@
+#!/bin/bash
+#deploy application to heroku
+
+#check if there is instance
+heroku apps:info
+if[ $? -eq 1 ]
+    heroku create
+    heroku config:set DB_URL=$DB_URL
+    heroku config:set JWT_SECRET=$JWT_SECRET
+
+#build frontend
+cd ui/
+npm run build
+
+cd ../
+#deploy
+git push -u heroku master
