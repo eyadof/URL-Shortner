@@ -3,10 +3,13 @@
 
 #check if there is instance
 heroku apps:info
-if[ $? -eq 1 ]
+
+if [ $? -eq 1 ]
+    then
     heroku create
     heroku config:set DB_URL=$DB_URL
     heroku config:set JWT_SECRET=$JWT_SECRET
+fi
 
 #build frontend
 cd ui/
@@ -14,4 +17,6 @@ npm run build
 
 cd ../
 #deploy
+git add .
+git commit -m "New Deploy"
 git push -u heroku master
