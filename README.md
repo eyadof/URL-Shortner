@@ -1,9 +1,11 @@
-#URL Shortner
+URL Shortner
+==============
 
 - support for anonymous users.
 - clicks statistics.
 
-##Installation
+Installation
+------------
 
 Backend dependencies: `npm install`
 
@@ -14,11 +16,14 @@ Frontend dependencies: `cd ui && npm install`
 - DB_URL: MongoDB connection url.
 - JWT_SECRET: secret password to sign jwt tokens.
 
-##Deployment
+Deployment
+----------
+
 `DB_URL=<url here> JWT_SECRET=<keep it the same always> npm run deploy`
 
 *note: git and heroku-cli are required.*
 
-#Tests
+Tests
+-----
 
 `npm test`
